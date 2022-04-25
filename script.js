@@ -66,10 +66,15 @@ function loadQuiz() {
 
 function getSelected() {
     let answer = undefined
+    let snackbar = document.getElementById("snackbar");
     
     answersEls.forEach((answerEl) => {
         if(answerEl.checked) {
             answer = answerEl.id
+        } else {
+            // snackbar
+            snackbar.className = "show";
+            setTimeout(function(){ snackbar.className = snackbar.className.replace("show", ""); }, 3000);
         }
     })
 
