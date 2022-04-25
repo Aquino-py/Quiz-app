@@ -71,12 +71,14 @@ function getSelected() {
     answersEls.forEach((answerEl) => {
         if(answerEl.checked) {
             answer = answerEl.id
-        } else {
-            // snackbar
-            snackbar.className = "show";
-            setTimeout(function(){ snackbar.className = snackbar.className.replace("show", ""); }, 3000);
         }
-    })
+    }) 
+    
+    if (answer === undefined) {
+        // snackbar
+        snackbar.className = "show";
+        setTimeout(function(){ snackbar.className = snackbar.className.replace("show", ""); }, 3000);
+    }
 
     return answer
 }
